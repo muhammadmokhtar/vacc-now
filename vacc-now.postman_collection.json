@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "002b93bd-2338-4346-9a55-4a356249ddd6",
+		"name": "vacc-now",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8083/vacc-now/api/v1/vaccination/confirm/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": 2,\r\n    \"timeScheduleId\": 4,\r\n    \"paymentMethodID\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/vacc-now/api/v1/vaccination/confirm/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vacc-now",
+						"api",
+						"v1",
+						"vaccination",
+						"confirm",
+						"1"
+					]
+				},
+				"description": "vaccination-confirmation link sent to client email to confirm on his/her vaccination schedule"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/vacc-now/api/v1/vaccination/schedule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": 2,\r\n    \"timeScheduleId\": 4,\r\n    \"paymentMethodID\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/vaccination/schedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vaccination",
+						"schedule"
+					]
+				},
+				"description": "client vaccination schedule api with: clientId, ScheduleId and paymentMethodID"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/vacc-now/api/v1/vaccination/payment-method",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/vaccination/payment-method",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vaccination",
+						"payment-method"
+					]
+				},
+				"description": "get request for list of accepted payment methods"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/vacc-now/api/v1/branches/available-times/4?to=1611041400000",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Ibrahim\",\r\n    \"age\": 32\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/vacc-now/api/v1/branches/available-times/4?to=1611041400000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"vacc-now",
+						"api",
+						"v1",
+						"branches",
+						"available-times",
+						"4"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "1611041400000",
+							"disabled": true
+						},
+						{
+							"key": "to",
+							"value": "1611041400000"
+						}
+					]
+				},
+				"description": "GET request for available times per branchId with optional query parametrs (from&to) to get available times at specific time range "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/vacc-now/api/v1/branches/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Ibrahim\",\r\n    \"age\": 32\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/branches/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"branches",
+						"all"
+					]
+				},
+				"description": "GET all branches with details like available vaccines"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/vacc-now/api/v1/branches",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Ibrahim\",\r\n    \"age\": 32\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/branches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"branches"
+					]
+				},
+				"description": "GET branches names"
+			},
+			"response": []
+		}
+	]
+}
